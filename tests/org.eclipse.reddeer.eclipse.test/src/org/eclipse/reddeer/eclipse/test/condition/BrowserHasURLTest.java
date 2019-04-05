@@ -94,7 +94,7 @@ public class BrowserHasURLTest {
 		assertTrue("Browser url and one obtained from getResult are not the same", URL.equals(condition.getResult()) || URL_SECURE.equals(conditionSecure.getResult()));
 		condition = new BrowserHasURL(browserEditor, new RegexMatcher(REG_EXP_URL));
 		assertTrue(condition.test());
-		assertEquals("Browser url and one obtained from getResult are not the same", URL, condition.getResult());
+		assertEquals("Browser url and one obtained from getResult are not the same", URL, URL.equals(condition.getResult()) || URL_SECURE.equals(conditionSecure.getResult()));
 		condition = new BrowserHasURL(browserEditor, BAD_URL);
 		assertFalse(condition.test());
 		assertNotEquals(BAD_URL, condition.getResult());		

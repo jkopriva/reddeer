@@ -72,7 +72,7 @@ public class LogParserView extends ViewPart implements IPropertyChangeListener{
 		}
 	}
 
-	class LogLocationSorter extends ViewerSorter {
+	class LogLocationComparator extends ViewerComparator {
 		public int compare(Viewer viewer, Object e1, Object e2) {
 			return ((LogData) e1).getLocation().compareToIgnoreCase(((LogData) e2).getLocation());
 		}
@@ -94,7 +94,7 @@ public class LogParserView extends ViewPart implements IPropertyChangeListener{
 		logsViewer = new TableViewer(parent, SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL);
 		logsViewer.setContentProvider(new ArrayContentProvider());
 		logsViewer.setLabelProvider(new LogParserViewLabelProvider());
-		logsViewer.setSorter(new LogLocationSorter());
+		logsViewer.setComparator(new LogLocationComparator());
 		currentLogs = LogParserDataModel.getLogParserData();
 		logsViewer.setInput(currentLogs);
 		getSite().setSelectionProvider(logsViewer);

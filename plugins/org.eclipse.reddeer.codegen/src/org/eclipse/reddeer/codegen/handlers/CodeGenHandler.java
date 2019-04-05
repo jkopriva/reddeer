@@ -85,7 +85,6 @@ public class CodeGenHandler extends AbstractHandler {
 				log.info("Page changed listener was started.");
 				Object selected = event.getSelectedPage();
 				if (selected instanceof PreviewPage) {
-					PreviewPage prev = ((PreviewPage) selected);
 					log.debug("Active page -> 'PreviewPage'.");
 					dialog.updateButtons();
 				} else if (selected instanceof MethodsPage) {

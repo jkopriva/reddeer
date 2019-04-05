@@ -12,10 +12,10 @@
 package org.eclipse.reddeer.logparser.preferences;
 
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.reddeer.logparser.model.ParseRule;
 
-public class ParseRuleNameSorter extends ViewerSorter {
+public class ParseRuleNameComparator extends ViewerComparator {
 	public int compare(Viewer viewer, Object e1, Object e2) {
 		return ((ParseRule) e1).getName().compareToIgnoreCase(((ParseRule) e2).getName());
 	}

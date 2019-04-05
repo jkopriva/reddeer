@@ -44,7 +44,8 @@ public class NewRedDeerTestWizardPageOne extends NewTestCaseWizardPageOne {
 	@Override
 	public void init(IStructuredSelection selection) {
 		super.init(selection);
-		setJUnit4(true, false);
+		super.setEnabled(false);
+		super.setJUnitVersion(JUnitVersion.VERSION_4);
  		updateStatus(getStatusList());
 	}
 	

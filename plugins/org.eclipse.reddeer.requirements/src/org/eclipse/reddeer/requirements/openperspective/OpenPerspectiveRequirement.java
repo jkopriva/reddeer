@@ -25,7 +25,6 @@ import org.eclipse.reddeer.eclipse.ui.perspectives.AbstractPerspective;
 import org.eclipse.reddeer.junit.requirement.Requirement;
 import org.eclipse.reddeer.requirements.exception.RequirementsLayerException;
 import org.eclipse.reddeer.requirements.openperspective.OpenPerspectiveRequirement.OpenPerspective;
-import org.eclipse.reddeer.swt.condition.MenuItemIsEnabled;
 
 /**
  * Open perspective requirement<br><br>

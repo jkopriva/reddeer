@@ -55,7 +55,7 @@ public class GenerateHashAndEqualsTest {
 		te.insertText(3, 0, "private String text;");
 		te.save();
 		GenerateHashCodeEqualsDialog gd = new GenerateHashCodeEqualsDialog();
-		gd.open(false);
+		gd.open();
 		assertEquals(1,gd.getFields().size());
 		assertEquals("text",gd.getFields().get(0).getFieldName());
 		gd.selectAll();

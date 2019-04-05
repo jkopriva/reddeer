@@ -27,6 +27,9 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.reddeer.logparser.model.LogData;
+import org.eclipse.reddeer.logparser.model.ParseRule;
+import org.eclipse.reddeer.logparser.preferences.ParseRuleNameComparator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -42,9 +45,6 @@ import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.reddeer.logparser.model.LogData;
-import org.eclipse.reddeer.logparser.model.ParseRule;
-import org.eclipse.reddeer.logparser.preferences.ParseRuleNameSorter;
 
 public class LogParserPropertiesDialog extends Dialog{
 	
@@ -123,7 +123,7 @@ public class LogParserPropertiesDialog extends Dialog{
 		new Label(cmpRules, SWT.NONE);
 		availableRulesViewer = new ListViewer(cmpRules, SWT.MULTI | SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
 		availableRulesViewer.setContentProvider(new ArrayContentProvider());
-		availableRulesViewer.setSorter(new ParseRuleNameSorter());
+		availableRulesViewer.setComparator(new ParseRuleNameComparator());
 		availableRulesViewer.setLabelProvider(new ParseRuleListLabelProvider ());
 		availableRulesViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			@Override

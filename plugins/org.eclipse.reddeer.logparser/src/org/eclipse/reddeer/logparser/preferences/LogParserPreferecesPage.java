@@ -76,7 +76,7 @@ public class LogParserPreferecesPage extends PreferencePage implements IWorkbenc
 				SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
 		parseRuleviewer.setContentProvider(new ArrayContentProvider());
 		parseRuleviewer.setLabelProvider(new ParseRuleLabelProvider());
-		parseRuleviewer.setSorter(new ParseRuleNameSorter());
+		parseRuleviewer.setComparator(new ParseRuleNameComparator());
 		currentParseRules = LogParserPreferencesPageModel.getParseRules();
 		originalParseRules = new ArrayList<ParseRule>(currentParseRules);
 		parseRuleviewer.addSelectionChangedListener(new ISelectionChangedListener() {
